@@ -10,11 +10,11 @@
       <h3>Range Slider</h3>
       <h:form>
       <h:panelGrid columns="1" style="margin-bottom: 10px">
-         <h:outputText id="displayRange" value="Between #{sliderView.number6} and #{sliderView.number7}" />
-         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {0} and {50000}" />
+         <h:outputText id="displayRange" value="Between #{view.number6} and #{view.number7}" />
+         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {min} and {max}" />
       </h:panelGrid>
-      <h:inputHidden id="txt6" value="#{sliderView.number6}" />
-      <h:inputHidden id="txt7" value="#{sliderView.number7}" />
+      <h:inputHidden id="txt6" value="#{view.number6}" />
+      <h:inputHidden id="txt7" value="#{view.number7}" />
       <p:separator />
       </h:form>
    </h:body>
