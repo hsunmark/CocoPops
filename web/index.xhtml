@@ -3,19 +3,19 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
 
-   <f:view>
+<h:body>
       <h:outputLabel value="Hello, world"/>
       <h3>Range Slider</h3>
+      <h:form>
       <h:panelGrid columns="1" style="margin-bottom: 10px">
          <h:outputText id="displayRange" value="Between #{sliderView.number6} and #{sliderView.number7}" />
-         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {0} and {100}" />
+         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {0} and {50000}" />
       </h:panelGrid>
       <h:inputHidden id="txt6" value="#{sliderView.number6}" />
       <h:inputHidden id="txt7" value="#{sliderView.number7}" />
-
       <p:separator />
-   </f:view>
+      </h:form>
+   </h:body>
 </html>
