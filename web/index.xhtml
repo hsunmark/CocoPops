@@ -11,7 +11,7 @@
       <h3>Range Slider</h3>
       <h:panelGrid columns="1" style="margin-bottom: 10px">
          <h:outputText id="displayRange" value="Between #{sliderView.number6} and #{sliderView.number7}" />
-         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {min} and {max}" />
+         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {0} and {100}" />
       </h:panelGrid>
       <h:inputHidden id="txt6" value="#{sliderView.number6}" />
       <h:inputHidden id="txt7" value="#{sliderView.number7}" />
