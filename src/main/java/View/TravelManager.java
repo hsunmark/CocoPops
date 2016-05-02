@@ -1,12 +1,11 @@
-/**
+package View; /**
  * Created by adam on 2016-05-01.
  */
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import org.primefaces.event.SlideEndEvent;
+
+import Controller.TravelController;
 
 import java.io.Serializable;
 
@@ -16,7 +15,8 @@ public class TravelManager implements Serializable {
 
     private int fromValue = 0;
     private int toValue = 5000;
-    private int travellers = 1;
+    private int nrOfTickets = 1;
+    private TravelController controller;
 
     public int getFromValue() {
         return fromValue;
@@ -34,15 +34,15 @@ public class TravelManager implements Serializable {
         this.toValue = toValue;
     }
 
-    public int getTravellers() {
-        return travellers;
+    public int getNrOfTickets() {
+        return nrOfTickets;
     }
 
-    public void setTravellers(int travellers) {
-        this.travellers = travellers;
+    public void setNrOfTickets(int nrOfTickets) {
+        this.nrOfTickets = nrOfTickets;
     }
 
     public void submit () {
-
+        controller.findMatches(fromValue, toValue, nrOfTickets);
     }
 }
