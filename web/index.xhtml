@@ -6,32 +6,35 @@
       xmlns:p="http://primefaces.org/ui">
 <h:head>
 </h:head>
-<h:body>
+<h:body style="background-image: url(background.jpg)">
     <div align="center">
         <img alt="banner" src="world%20map%20banner.jpg"/>
-    <h:form>
+        <h:form>
 
+            <h:panelGrid columns="1" style="margin-bottom: 10px">
 
-        <h:panelGrid columns="1" style="margin-bottom: 10px">
-            <p:outputLabel for="displayRange" value="Select price range"/>
-            <h:outputText id="displayRange" value="Between #{front.fromValue} and #{front.toValue}"/>
-            <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true"
-                      displayTemplate="Between {min} and {max}" maxValue="50000" step="500"/>
-            <p></p>
-            <p:outputLabel for="nrOfTickets" value="Number of tickets"/>
-            <p:inputText id="nrOfTickets" value="#{front.nrOfTickets}"
-                         required="true"
-                         requiredMessage="Choose number of tickets"/>
-        <h:inputHidden id="txt6" value="#{front.fromValue}"/>
-        <h:inputHidden id="txt7" value="#{front.toValue}"/>
+                <p:outputLabel for="displayRange" value="Select price range" style="color: white"/>
+                <h:outputText id="displayRange" value="Between #{travelManager.fromValue} and #{travelManager.toValue}"
+                              style="color: white"/>
+                <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true"
+                          displayTemplate="Between {min} and {max}" maxValue="50000" step="500"/>
 
-        <p>
-            <p:commandButton value="Find destination" action="#{front.submit}" update="@form"
-                             icon="ui-icon-check"/>
-        </p>
+                <h:inputHidden id="txt6" value="#{travelManager.fromValue}" style="color: white"/>
+                <h:inputHidden id="txt7" value="#{travelManager.toValue}" style="color: white"/>
+                <p></p>
 
-        </h:panelGrid>
-    </h:form>
+                <p:outputLabel for="nrOfTickets" value="Number of tickets" style="color: white"/>
+                <p:inputText id="nrOfTickets" value="#{travelManager.nrOfTickets}"
+                             required="true" style="color: white"
+                             requiredMessage="Choose number of tickets"/>
+
+                <p>
+                    <p:commandButton value="Find destination" action="#{travelManager.submit}"
+                                     icon="ui-icon-check" />
+                </p>
+
+            </h:panelGrid>
+        </h:form>
     </div>
 </h:body>
 </html>
