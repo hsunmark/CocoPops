@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class Cities {
 
+    private final String FILENAME = "src/cities.txt";
+    private List<String> cities = new ArrayList<String>();
     final String fileName = "src/airports.txt";
     List<String> cities = new ArrayList<String>();
 
@@ -21,8 +23,7 @@ public class Cities {
         int randIndex = 0;
 
         try {
-
-            BufferedReader file = new BufferedReader(new FileReader(fileName));
+            BufferedReader file = new BufferedReader(new FileReader(FILENAME));
 
             while ((currentLine = file.readLine()) != null) {
                 cities.add(currentLine);
@@ -31,7 +32,7 @@ public class Cities {
             // get random index number, to be able to get random city from arraylist
             randIndex = (int)(Math.floor(Math.random()*cities.size()));
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -49,8 +50,6 @@ public class Cities {
         return destinationInfo;
 
     }
-
-
 
 }
 
