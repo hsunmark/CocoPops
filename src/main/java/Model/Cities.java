@@ -13,7 +13,6 @@ public class Cities {
     private final String FILENAME = "src/cities.txt";
     private List<String> cities = new ArrayList<String>();
     final String fileName = "src/airports.txt";
-    List<String> cities = new ArrayList<String>();
 
     List<String> destinationInfo = new ArrayList<String>();
 

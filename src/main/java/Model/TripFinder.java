@@ -24,6 +24,8 @@ public class TripFinder {
 
     public Trip findTrip () {
         Request request = new Request("ARN", "MIA", fromDate, toDate, nrOfTickets, fromValue, toValue);
+        HttpConnector httpConnector = new HttpConnector(request);
+       // httpConnector.sendRequest();
         return null;
     }
 }

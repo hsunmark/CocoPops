@@ -11,6 +11,8 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 
 /**
@@ -29,7 +31,7 @@ public class HttpConnector {
         JsonObject requestObj = new JsonObject();
         JsonElement jsonElement = gson.toJsonTree(request);
         requestObj.add("request", jsonElement);
-        String postUrl = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=AIzaSyCbNwT1WMq4WoCYrZ451tas3Fk4GekvPL4";
+        String postUrl = "https://www.googleapis.com/qpxExpress/v1/trips/search?key=" + readApiKey();
 
         HttpClient httpClient = HttpClientBuilder.create().build();
         HttpPost post = new HttpPost(postUrl);
@@ -42,6 +44,19 @@ public class HttpConnector {
         HttpEntity httpEntity = response.getEntity();
         String content = EntityUtils.toString(httpEntity);
         return content;
+    }
+
+    private String readApiKey() {
+        String line;
+        try {
+            BufferedReader file = new BufferedReader(new FileReader("src/apikey.txt"));
+            while ((line = file.readLine()) != null) {
+                return line;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }
