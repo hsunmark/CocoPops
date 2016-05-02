@@ -6,8 +6,9 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
 </h:head>
-<h:body style="background-image: url(background.jpg)">
+<h:body>
     <div align="center">
         <img alt="banner" src="world%20map%20banner.jpg"/>
         <h:form>
@@ -33,9 +34,27 @@
                 <f:selectItem itemLabel="5" itemValue="5" />
             </p:selectOneMenu>
 
+                <p:outputLabel for="fromAirport" value="From airport" style="color: white"/>
+                <p:inputText id="fromAirport" value="#{travelManager.fromAirport}"
+                             required = "true"
+                             requiredMessage = "Need to specify departure airport" />
+                <p:message for="fromAirport" display="text"/>
+
+                <p:outputLabel for="fromDate" value="From date" style="color: white"/>
+                <p:calendar id="fromDate" value="#{travelManager.fromDate}"
+                            required = "true"
+                            requiredMessage = "Need to specify from date"/>
+                <p:message for="fromDate" display="text"/>
+
+                <p:outputLabel for="toDate" value="To date" style="color: white"/>
+                <p:calendar id="toDate" value="#{travelManager.toDate}"
+                            required = "true"
+                            requiredMessage = "Need to specify to date"/>
+                <p:message for="toDate" display="text"/>
+
         <p>
             <p:commandButton value="Find destination" action="#{travelManager.submit}"
-                             icon="ui-icon-check"/>
+                             icon="ui-icon-check" update="@form"/>
         </p>
 
         </h:panelGrid>

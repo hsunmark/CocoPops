@@ -10,7 +10,6 @@ import Controller.TravelController;
 import Model.Trip;
 import org.primefaces.context.RequestContext;
 
-import java.io.Serializable;
 import java.util.Date;
 
 @ManagedBean
@@ -23,6 +22,7 @@ public class TravelManager {
     private TravelController controller;
     private Date fromDate;
     private Date toDate;
+    private String fromAirport;
 
     public int getFromValue() {
         return fromValue;
@@ -72,5 +72,13 @@ public class TravelManager {
         } else {
             //Show the trip
         }
+    }
+
+    public String getFromAirport() {
+        return fromAirport;
+    }
+
+    public void setFromAirport(String fromAirport) {
+        this.fromAirport = fromAirport;
     }
 }
