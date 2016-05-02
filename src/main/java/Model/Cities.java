@@ -42,33 +42,29 @@ public class Cities {
         String[] countryAndAirport = dest[1].split(" \\(");
 
         destinationInfo.add(0,dest[0]);
-
-        //Geraldton, Australia, (GET)
-
         destinationInfo.add(1, countryAndAirport[0]);
-
         destinationInfo.add(2,countryAndAirport[1].substring(0,3));
 
         // return CITY, COUNTRY, AIRPORT-CODE
         return destinationInfo;
-
-        /**
-        * Låter regex ligga kvar för det vara så jävla jobbigt
-
-        for (int i = 0; i < cities.size(); i++) {
-            //Pattern pattern = Pattern.compile();
-            //Matcher m = pattern.matcher(cities.get(i));
-
-            if(cities.get(i).matches("\\w+, \\w+, .*?")) {
-                System.out.println(cities.get(i));
-            }
-
-
-        }
-        */
 
     }
 
 
 
 }
+
+/**
+ * Låter regex ligga kvar för det vara så jävla jobbigt
+
+ for (int i = 0; i < cities.size(); i++) {
+ //Pattern pattern = Pattern.compile();
+ //Matcher m = pattern.matcher(cities.get(i));
+
+ if(cities.get(i).matches("\\w+, \\w+, .*?")) {
+ System.out.println(cities.get(i));
+ }
+
+
+ }
+ */
