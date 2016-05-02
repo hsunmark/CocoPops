@@ -1,22 +1,23 @@
-/**
+package View; /**
  * Created by adam on 2016-05-01.
  */
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-import org.primefaces.event.SlideEndEvent;
+
+import Controller.TravelController;
+import Model.Trip;
 
 import java.io.Serializable;
 
-@ManagedBean (name = "front", eager = true)
+@ManagedBean
 @SessionScoped
-public class View implements Serializable {
+public class TravelManager implements Serializable {
 
     private int fromValue = 0;
     private int toValue = 5000;
     private int nrOfTickets = 1;
+    private TravelController controller;
 
     public int getFromValue() {
         return fromValue;
@@ -43,6 +44,7 @@ public class View implements Serializable {
     }
 
     public void submit () {
-
+        Trip trip = controller.findMatch(fromValue, toValue, nrOfTickets);
+        //Show the trip
     }
 }
