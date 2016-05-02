@@ -3,12 +3,16 @@
  */
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import org.primefaces.event.SlideEndEvent;
+
 import java.io.Serializable;
 
-@ManagedBean (name = "front", eager = true)
+@ManagedBean
 @SessionScoped
-public class View implements Serializable {
+public class TravelManager implements Serializable {
 
     private int fromValue = 0;
     private int toValue = 5000;
