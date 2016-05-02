@@ -17,7 +17,7 @@ public class RestResource {
     @Produces(MediaType.TEXT_PLAIN)
     public String getApplications() {
 
-        return "hello";
+        return "test";
     }
 
 }

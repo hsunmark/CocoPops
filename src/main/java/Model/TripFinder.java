@@ -23,7 +23,7 @@ public class TripFinder {
     }
 
     public Trip findTrip () {
-        //Find the trip
+        Request request = new Request("ARN", "MIA", fromDate, toDate, nrOfTickets, fromValue, toValue);
         return null;
     }
 }
