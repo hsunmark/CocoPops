@@ -7,7 +7,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.SlideEndEvent;
 
-@ManagedBean (name = "view", eager = true)
+@ManagedBean (name = "front", eager = true)
 public class View {
 
     private int number1;

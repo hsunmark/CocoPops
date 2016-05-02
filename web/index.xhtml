@@ -8,14 +8,11 @@
 <h:body>
       <h:outputLabel value="Hello, world"/>
       <h3>Range Slider</h3>
-      <h:form>
       <h:panelGrid columns="1" style="margin-bottom: 10px">
-         <h:outputText id="displayRange" value="Between #{view.number6} and #{view.number7}" />
+         <h:outputText id="displayRange" value="Between #{front.number6} and #{front.number7}" />
          <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {min} and {max}" />
       </h:panelGrid>
-      <h:inputHidden id="txt6" value="#{view.number6}" />
-      <h:inputHidden id="txt7" value="#{view.number7}" />
-      <p:separator />
-      </h:form>
-   </h:body>
+      <h:inputHidden id="txt6" value="#{front.number6}" />
+      <h:inputHidden id="txt7" value="#{front.number7}" />
+</h:body>
 </html>
