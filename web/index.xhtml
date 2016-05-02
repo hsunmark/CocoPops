@@ -2,32 +2,36 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
-
+<h:head>
+</h:head>
 <h:body>
-      <h:outputLabel value="Hello, world"/>
-      <h3>Range Slider</h3>
-      <h:form>
-      <h:panelGrid columns="1" style="margin-bottom: 10px">
-         <h:outputText id="displayRange" value="Between #{view.number6} and #{view.number7}" />
-         <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between {min} and {max}" />
-      </h:panelGrid>
-      <h:inputHidden id="txt6" value="#{view.number6}" />
-      <h:inputHidden id="txt7" value="#{view.number7}" />
-      <p:separator />
-
-          <h:panelGrid columns="2" cellpadding="5">
-              <p:outputLabel for="username" value="asd"/>
-              <p:inputText id="username" value="asd"
-                           required="true"/>
+    <div align="center">
+        <img alt="banner" src="world%20map%20banner.jpg"/>
+    <h:form>
 
 
-              <p:outputLabel for="password" value="asd"/>
-              <p:password id="password" value="asd"
-                          required="true"/>
-          </h:panelGrid>
+        <h:panelGrid columns="1" style="margin-bottom: 10px">
+            <p:outputLabel for="displayRange" value="Select price range"/>
+            <h:outputText id="displayRange" value="Between #{front.fromValue} and #{front.toValue}"/>
+            <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true"
+                      displayTemplate="Between {min} and {max}" maxValue="50000" step="500"/>
+            <p></p>
+            <p:outputLabel for="nrOfTickets" value="Number of tickets"/>
+            <p:inputText id="nrOfTickets" value="#{front.nrOfTickets}"
+                         required="true"
+                         requiredMessage="Choose number of tickets"/>
+        <h:inputHidden id="txt6" value="#{front.fromValue}"/>
+        <h:inputHidden id="txt7" value="#{front.toValue}"/>
 
-      </h:form>
-   </h:body>
+        <p>
+            <p:commandButton value="Find destination" action="#{front.submit}" update="@form"
+                             icon="ui-icon-check"/>
+        </p>
+
+        </h:panelGrid>
+    </h:form>
+    </div>
+</h:body>
 </html>
