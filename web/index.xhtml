@@ -24,7 +24,7 @@
                 <h:inputHidden id="txt7" value="#{travelManager.toValue}" style="color: white"/>
                 <p></p>
 
-            <p:outputLabel for="nrOfTickets" value=" Number of travellers" />
+            <p:outputLabel for="nrOfTickets" value=" Number of travellers" style="color: white" />
             <p:selectOneMenu id="nrOfTickets" value="#{travelManager.nrOfTickets}" style="width:125px">
                 <f:selectItem itemLabel="1" itemValue="1" />
                 <f:selectItem itemLabel="2" itemValue="2" />
@@ -32,9 +32,6 @@
                 <f:selectItem itemLabel="4" itemValue="4" />
                 <f:selectItem itemLabel="5" itemValue="5" />
             </p:selectOneMenu>
-
-        <h:inputHidden id="txt6" value="#{travelManager.fromValue}"/>
-        <h:inputHidden id="txt7" value="#{travelManager.toValue}"/>
 
         <p>
             <p:commandButton value="Find destination" action="#{travelManager.submit}"

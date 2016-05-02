@@ -6,6 +6,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import Controller.TravelController;
+import Model.Trip;
 
 import java.io.Serializable;
 
@@ -43,6 +44,7 @@ public class TravelManager implements Serializable {
     }
 
     public void submit () {
-        controller.findMatches(fromValue, toValue, nrOfTickets);
+        Trip trip = controller.findMatch(fromValue, toValue, nrOfTickets);
+        //Show the trip
     }
 }
