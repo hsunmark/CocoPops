@@ -66,10 +66,9 @@ public class TravelManager {
     }
 
     public void submit () throws IOException {
+        Trip trip;
         try {
-            Trip trip = controller.findMatch(fromAirport, fromValue, toValue, nrOfTickets, fromDate, toDate);
-            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sorry!", "No trip found.");
-            RequestContext.getCurrentInstance().showMessageInDialog(message);
+            trip = controller.findMatch(fromAirport, fromValue, toValue, nrOfTickets, fromDate, toDate);
         } catch (NullPointerException e) {
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sorry!", "No trip found.");
             RequestContext.getCurrentInstance().showMessageInDialog(message);

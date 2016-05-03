@@ -10,11 +10,10 @@ import java.util.List;
  */
 public class Cities {
 
-    private final String FILENAME = "src/cities.txt";
+    private final String FILENAME_CITIES = "src/cities.txt";
+    private final String FILENAME_AIRPORTS = "src/airports.txt";
     private List<String> cities = new ArrayList<String>();
-    final String fileName = "src/airports.txt";
-
-    List<String> destinationInfo = new ArrayList<String>();
+    private List<String> destinationInfo = new ArrayList<String>();
 
     public List<String> randomCity() {
 
@@ -22,7 +21,7 @@ public class Cities {
         int randIndex = 0;
 
         try {
-            BufferedReader file = new BufferedReader(new FileReader(FILENAME));
+            BufferedReader file = new BufferedReader(new FileReader(FILENAME_CITIES));
 
             while ((currentLine = file.readLine()) != null) {
                 cities.add(currentLine);
