@@ -10,6 +10,7 @@ import Controller.TravelController;
 import Model.Trip;
 import org.primefaces.context.RequestContext;
 
+import java.io.IOException;
 import java.util.Date;
 
 @ManagedBean
@@ -19,7 +20,7 @@ public class TravelManager {
     private int fromValue = 0;
     private int toValue = 5000;
     private int nrOfTickets = 1;
-    private TravelController controller;
+    private TravelController controller = new TravelController();
     private Date fromDate;
     private Date toDate;
     private String fromAirport;
@@ -64,15 +65,18 @@ public class TravelManager {
         this.fromDate = fromDate;
     }
 
-    public void submit () {
-        Trip trip = controller.findMatch(fromValue, toValue, nrOfTickets, fromDate, toDate);
-        if (trip == null) {
+    public void submit () throws IOException {
+        try {
+            Trip trip = controller.findMatch(fromAirport, fromValue, toValue, nrOfTickets, fromDate, toDate);
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sorry!", "No trip found.");
             RequestContext.getCurrentInstance().showMessageInDialog(message);
-        } else {
-            //Show the trip
+        } catch (NullPointerException e) {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Sorry!", "No trip found.");
+            RequestContext.getCurrentInstance().showMessageInDialog(message);
         }
-    }
+        //Show the trip
+
+}
 
     public String getFromAirport() {
         return fromAirport;
