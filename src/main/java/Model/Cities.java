@@ -41,11 +41,15 @@ public class Cities {
         String[] dest = unformattedResult.split(", ");
         String[] countryAndAirport = dest[1].split(" \\(");
 
+
         destinationInfo.add(0,dest[0]);
         destinationInfo.add(1, countryAndAirport[0]);
         destinationInfo.add(2,countryAndAirport[1].substring(0,3));
 
         // return CITY, COUNTRY, AIRPORT-CODE
+        for(int i = 0; i < destinationInfo.size(); i++) {
+            System.out.println("****************************" + destinationInfo.get(i));
+        }
         return destinationInfo;
 
     }
