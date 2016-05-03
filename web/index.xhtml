@@ -9,10 +9,9 @@
     <link rel="stylesheet" type="text/css" href="index.css"/>
 </h:head>
 <h:body>
-    <div align="center">
+    <div id="main" align="center">
         <img alt="banner" src="world%20map%20banner.jpg"/>
         <h:form>
-
             <h:panelGrid columns="1" style="margin-bottom: 10px">
 
                 <p:outputLabel for="displayRange" value="Select price range" style="color: white"/>
@@ -35,26 +34,17 @@
             </p:selectOneMenu>
 
                 <p:outputLabel for="fromAirport" value="From airport" style="color: white"/>
-                <p:inputText id="fromAirport" value="#{travelManager.fromAirport}"
-                             required = "true"
-                             requiredMessage = "Need to specify departure airport" />
-                <p:message for="fromAirport" display="text"/>
+                <p:inputText id="fromAirport" value="#{travelManager.fromAirport}" />
 
                 <p:outputLabel for="fromDate" value="From date" style="color: white"/>
-                <p:calendar id="fromDate" value="#{travelManager.fromDate}"
-                            required = "true"
-                            requiredMessage = "Need to specify from date"/>
-                <p:message for="fromDate" display="text"/>
+                <p:calendar id="fromDate" value="#{travelManager.fromDate}"/>
 
                 <p:outputLabel for="toDate" value="To date" style="color: white"/>
-                <p:calendar id="toDate" value="#{travelManager.toDate}"
-                            required = "true"
-                            requiredMessage = "Need to specify to date"/>
-                <p:message for="toDate" display="text"/>
+                <p:calendar id="toDate" value="#{travelManager.toDate}"/>
 
         <p>
             <p:commandButton value="Find destination" action="#{travelManager.submit}"
-                             icon="ui-icon-check" update="@form"/>
+                             icon="ui-icon-check"/>
         </p>
 
         </h:panelGrid>

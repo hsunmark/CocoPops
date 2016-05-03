@@ -2,6 +2,7 @@ body {
     background-image: url("background.jpg");
 }
 
+/*if Primefaces validation is used*/
 .ui-messages-error,.ui-message-error {
     background: powderblue;
 }
